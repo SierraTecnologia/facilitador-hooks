@@ -1,7 +1,11 @@
 {
     "name": "sierratecnologia/facilitador-hooks",
     "description": "Hooks integrated in Facilitador",
-    "keywords": ["laravel", "hooks", "facilitador"],
+    "keywords": [
+        "laravel",
+        "hooks",
+        "facilitador"
+    ],
     "license": "MIT",
     "homepage": "https://sierratecnologia.io/",
     "support": {
@@ -15,15 +19,13 @@
         }
     ],
     "require": {
-        "sierratecnologia/hooks": "^0.4.0"
+        "sierratecnologia/hooks": "^2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "orchestra/testbench": "^5.0|^6.0",
-        "phpunit/phpunit": "^9.3",
-        "psalm/plugin-laravel": "^1.5",
-        "vimeo/psalm": "^4.0",
-        "phpro/grumphp": ">=1.3"
+        "friendsofphp/php-cs-fixer": "^3.68",
+        "orchestra/testbench": "^11.0",
+        "phpunit/phpunit": "^12.0",
+        "phpro/grumphp": "^2.12"
     },
     "autoload": {
         "psr-4": {
@@ -54,5 +56,6 @@
         "allow-plugins": {
             "phpro/grumphp": true
         }
-    }
+    },
+    "version": "2.0.0"
 }
