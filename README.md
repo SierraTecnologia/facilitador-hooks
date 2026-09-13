@@ -22,7 +22,7 @@ Install using composer:
 composer require sierratecnologia/facilitador-hooks
 ```
 
-Then add the service provider to the configuration (optional on Laravel 5.5+):
+Laravel 13 discovers the service provider automatically. If you need to register it explicitly:
 
 ```php
 'providers' => [
