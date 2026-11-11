@@ -14,6 +14,7 @@ class FacilitadorHooksServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
+    #[\Override]
     public function register()
     {
         $configPath = dirname(__DIR__).'/publishable/config/facilitador-hooks.php';

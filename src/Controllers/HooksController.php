@@ -4,6 +4,7 @@ namespace FacilitadorHooks\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Hooks\Hooks;
@@ -80,7 +81,7 @@ class HooksController extends Controller
         // Check permission
         $this->authorize('browse_hooks');
 
-        $this->hooks->update($name);
+        $this->hooks->update($name, null);
 
         return $this->redirect("Hook [{$name}] have been updated!");
     }
@@ -112,13 +113,13 @@ class HooksController extends Controller
     }
 
     /**
-     * @return never
+     * Volta para a página de origem com a mensagem na query string.
      */
-    protected function redirect(string $message)
+    protected function redirect(string $message): RedirectResponse
     {
         $referer = $this->request->server('HTTP_REFERER');
-        $location = head(explode('?', $referer));
-        header('Location: '.$location.'?message='.urlencode($message));
-        exit;
+        $location = head(explode('?', (string) $referer));
+
+        return new RedirectResponse($location.'?message='.urlencode($message));
     }
 }
